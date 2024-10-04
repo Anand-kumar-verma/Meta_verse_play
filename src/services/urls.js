@@ -6,7 +6,7 @@ export const dummy_aviator = "https://metaverse-timer.onrender.com";
 export const domain = "https://metaverse-timer.onrender.com";
 export const public_chain = "https://tronscan.io/#/";
 
-export const newdomain1 = "http://192.168.18.183:9000";
+// export const newdomain1 = "http://192.168.18.183:9000";
 
 export const telegram_url = "";
 export const facebook_url = "";
