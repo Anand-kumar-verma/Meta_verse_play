@@ -171,14 +171,21 @@ function Dashboard() {
     dispatch(waitingAviatorFun(true));
     dispatch(please_reconnect_the_serverFun(false));
   }, []);
+  const [status, setStatus] = useState(false);
 
-  const { data: amount } = useQuery(["yesterday_income"], () => yesterdayFn(), {
-    refetchOnMount: false,
-    refetchOnReconnect: false,
-    refetchOnWindowFocus: false,
-  });
+  const getStatus = async () => {
+    try {
+      const res = await axios.get(endpoint.get_status);
+      setStatus(res?.data?.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    getStatus();
+  }, []);
+  
 
-  const statusyesterday = amount?.data?.data
   
   return (
     <Layout header={false}>
@@ -412,7 +419,11 @@ function Dashboard() {
                         Win Go
                       </Typography>
                       <Button
-                        onClick={() => navigate("/win")}
+                       onClick={() => {
+                        if (status?.find((i)=>i?.title==="wingo_status")?.longtext !== "0") {
+                          navigate("/win");
+                        }
+                      }}
                         variant="text"
                         color="primary"
                         sx={{ ...styles.playbutton }}
@@ -534,7 +545,10 @@ function Dashboard() {
                         Aviator
                       </Typography>
                       <Button
-                        onClick={() => navigate("/playgame")}
+                        onClick={() => {
+                          if (status?.find((i)=>i?.title==="aviator_staus")?.longtext !== "0")
+                            navigate("/playgame");
+                          }}
                         variant="text"
                         color="primary"
                         sx={{ ...styles.playbutton }}
