@@ -1,11 +1,8 @@
-import CloseIcon from "@mui/icons-material/Close";
 import {
   Box,
   Container,
-  Dialog,
-  IconButton,
   Stack,
-  Typography,
+  Typography
 } from "@mui/material";
 import * as React from "react";
 import ReactApexChart from "react-apexcharts";
@@ -29,7 +26,6 @@ import rechargeIcon from "../../assets/images/new/download (8).png";
 import Layout from "../../component/Layout/Layout";
 import { walletamount, yesterdayFn } from "../../services/apicalling";
 import theme from "../../utils/theme";
-import MyModal from "../../Shared/Modal";
 
 function Wallet() {
 
@@ -419,9 +415,7 @@ function Wallet() {
           </Dialog>
         )} */}
         <CustomCircularProgress isLoading={isLoading} />
-        {statusyesterday?.status_of_deposit_popup === 1 ?
-           <MyModal /> 
-          : "" }
+       
 
       </Container>
     </Layout>

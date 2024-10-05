@@ -30,7 +30,7 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<Login />} />
-      <Route path="/before-login" element={<BeforeLogin />}></Route>
+      {/* <Route path="/before-login" element={<BeforeLogin />}></Route> */}
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/otp-registration" element={<VerifyregistrationOtp />} />
         <Route path="/otp" element={<Otpverify />} />
@@ -50,7 +50,7 @@ const App = () => {
         ) : (
           <Route path="/" element={<Login />} />
         )}
-         <Route path="/splash" element={<SplashScreen />}></Route>
+         {/* <Route path="/splash" element={<SplashScreen />}></Route> */}
       </Routes>
     </Box>
   );

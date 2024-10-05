@@ -90,7 +90,7 @@ function LoginWithEmail() {
         sessionStorage.setItem("isAvailableCricketUser", true);
         setloding(false);
         storeCookies();
-        navigate("/before-login");
+        navigate("/dashboard");
         window.location.reload();
       }
     } catch (e) {

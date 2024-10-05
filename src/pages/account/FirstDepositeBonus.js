@@ -14,7 +14,6 @@ import invitationBonus from "../../assets/images/invitationBonus-aa7acbd3.png";
 import { bgfootergray } from "../../Shared/color";
 import Layout from "../../component/Layout/Layout";
 import { NavLink } from "react-router-dom";
-import MyModal from "../../Shared/Modal";
 import { yesterdayFn } from "../../services/apicalling";
 import { useQuery } from "react-query";
 import FirstDeposit from "../../Shared/FirstDeposit";

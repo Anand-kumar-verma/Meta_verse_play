@@ -110,7 +110,7 @@ function LoginWithMobile() {
         // get_user_data(response?.data?.UserID);
         setloding(false);
         storeCookies();
-        navigate("/before-login");
+        navigate("/dashboard");
         window.location.reload();
       }
     } catch (e) {

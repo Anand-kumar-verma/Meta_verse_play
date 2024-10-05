@@ -14,7 +14,6 @@ import invitationBonus from "../../assets/images/invitationBonus-aa7acbd3.png";
 import { bgfootergray } from "../../Shared/color";
 import Layout from "../../component/Layout/Layout";
 import { NavLink, useNavigate } from "react-router-dom";
-import MyModal from "../../Shared/Modal";
 import { yesterdayFn } from "../../services/apicalling";
 import { useQuery } from "react-query";
 
@@ -185,7 +184,7 @@ function Activity() {
         </Box>
 
 
-        <Box sx={style.actimg2} className="!cursor-pointer"  onClick={()=>navigate('/first')}>
+        <Box sx={style.actimg2} className="!cursor-pointer" >
           <Box
             component="img"
             sx={{ width: "100%", borderRadius: "10px 10px 0px 0px" }}
@@ -216,9 +215,7 @@ function Activity() {
           </Typography>
         </Box>
 
-        {statusyesterday?.status_of_deposit_popup === 1 ?
-          <MyModal />
-          : ""}
+     
       </Stack>
     </Layout>
   );

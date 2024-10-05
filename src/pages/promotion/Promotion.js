@@ -22,7 +22,6 @@ import sort from "../../assets/images/data-flow.png";
 import donut from "../../assets/images/database.png";
 import money from "../../assets/images/salary.png";
 // import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
-import MyModal from "../../Shared/Modal";
 import Layout from "../../component/Layout/Layout";
 import { MygetdataLevelFn, walletamount, yesterdayFn } from "../../services/apicalling";
 import { fron_end_main_domain } from "../../services/urls";
@@ -432,9 +431,7 @@ function Promotion() {
             </div>
           </Dialog>
         )} */}
-        {result?.status_of_deposit_popup === 1 ?
-        <MyModal />
-      :"" }
+      
        
       </Container>
     </Layout>

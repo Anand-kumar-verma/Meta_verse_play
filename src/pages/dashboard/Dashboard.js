@@ -28,7 +28,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { flexbetween, flexcoloumcenter } from "../../Shared/Commom";
 import { checkTokenValidity } from "../../Shared/CookieStorage";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
-import MyModal from "../../Shared/Modal";
 import {
   bgdarkgray,
   bggold,
@@ -47,12 +46,12 @@ import k3lottery from "../../assets/images/k3lottery.png";
 import stage from "../../assets/images/podium.png";
 import trx from "../../assets/images/trx.png";
 import wingo from "../../assets/images/wingo.png";
-import customer from "../../assets/img/customer care.png";
-import download from "../../assets/img/download btn.png";
-import logo from "../../assets/img/logo.png";
 import slider1 from "../../assets/img/banner1.png";
 import slider2 from "../../assets/img/banner2.jpg";
 import slider3 from "../../assets/img/banner3.jpg";
+import customer from "../../assets/img/customer care.png";
+import download from "../../assets/img/download btn.png";
+import logo from "../../assets/img/logo.png";
 import place1 from "../../assets/place1.png";
 import place2 from "../../assets/place2.png";
 import place3 from "../../assets/place3.png";
@@ -379,72 +378,6 @@ function Dashboard() {
             </Stack>
           </Box>
 
-          {/* <div
-            className="mt-2 w-full grid grid-cols-3 gap-[2%] o"
-            style={{
-              width: "95%",
-              marginLeft: "2.5%",
-              marginTop: "20px",
-              mb: "20px",
-            }}
-          >
-            {game_data?.map((i) => {
-              return (
-                <Box component={NavLink} to={`/${i?.url}`}>
-                  <Box
-                    sx={{
-                      marginBottom: "10px",
-                      width: "95%",
-                      borderRadius: "7px 7px 7px 7px !important",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <a
-                      onClick={() => {
-                        if (
-                          i.name === "Slots" ||
-                          i.name === "Popular" ||
-                          i.name === "Casino"
-                        )
-                          return toast("Comming Soon !", { id: 1 });
-                        scrollToSection("games");
-                        settype_of_game(i?.name);
-                      }}
-                      href={`${i?.name}`}
-                      style={{
-                        backgroundImage: `url(${bgms})`,
-                        filter: "hue-rotate(45deg)",
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "100% 100%",
-                        padding: "15px 15px 15px 15px",
-                        borderRadius: "7px 7px 0px 0px !important",
-                      }}
-                      className="cursor-pointer   flex flex-col items-center justify-center"
-                    >
-                      <img
-                        style={{ filter: "hue-rotate(311deg)" }}
-                        className="w-[90px] h-[90px] "
-                        src={i?.img}
-                      />
-                    </a>
-                    <p
-                      className="!text-sm font-bold"
-                      style={{
-                        color: "white",
-                        background: lightyellow,
-                        width: "100%",
-                        textAlign: "center",
-                        padding: "5px 0px",
-                        borderRadius: "0px 0px 7px 7px !important",
-                      }}
-                    >
-                      {i?.name}
-                    </p>
-                  </Box>
-                </Box>
-              );
-            })}
-          </div> */}
           <Box>
             <Box sx={{ mt: 3, width: "95%", ml: "2.5%" }}>
               <Stack direction="row" alignItems="center">
@@ -519,7 +452,7 @@ function Dashboard() {
                     </Box>
                   </Box>
                 </Box>
-                <Box sx={{ ...flexbetween, ...styles.gamemenubox }}>
+                {/* <Box sx={{ ...flexbetween, ...styles.gamemenubox }}>
                   <Box sx={{ ...styles.gameimgbox }}>
                     <Box
                       component="img"
@@ -579,7 +512,7 @@ function Dashboard() {
                       </Typography>
                     </Box>
                   </Box>
-                </Box>
+                </Box> */}
                 <Box sx={{ ...flexbetween, ...styles.gamemenubox }}>
                   <Box sx={{ ...styles.gameimgbox }}>
                     <Box
@@ -641,7 +574,7 @@ function Dashboard() {
                     </Box>
                   </Box>
                 </Box>
-                <Box sx={{ ...flexbetween, ...styles.gamemenubox }}>
+                {/* <Box sx={{ ...flexbetween, ...styles.gamemenubox }}>
                   <Box sx={{ ...styles.gameimgbox }}>
                     <Box
                       component="img"
@@ -762,7 +695,7 @@ function Dashboard() {
                       </Typography>
                     </Box>
                   </Box>
-                </Box>
+                </Box> */}
               </Box>
             </Box>
           </Box>
@@ -1047,129 +980,7 @@ function Dashboard() {
               );
             })}
           </Box>
-          {/* <Box sx={styles.wininfoouter} >
-            <Stack direction={"row"} sx={{ alignItems: "center", mb: 2, }}>
-              <Box
-                sx={{
-                  background: 'white',
-                  width: "4px",
-                  height: "16px",
-                }}
-              ></Box>
-              <Typography
-                variant="body1"
-
-                sx={{ fontSize: "18px", fontWeight: 700, ml: 1, color: 'white' }}
-              >
-                Last Trade Top Winner
-              </Typography>
-            </Stack>
-            {winnner_data?.slice(3, 8)?.map((i, index) => {
-              return (
-                <Stack
-                  key={index}
-                  direction="row"
-                  sx={styles.winnerslider}
-                >
-                  <div style={{ position: 'relative' }}>
-                    <Box
-                      width={25}
-                      height={25}
-                      component={"img"}
-                      src={crown2}
-                      sx={styles.bca}
-                    ></Box>
-                    <Box
-                      component={"img"}
-                      src={imageSources[index]}
-                      alt={`Profile ${index + 1} `}
-                      width={45}
-                      height={45}
-                      sx={styles.winnerprofile}
-                    ></Box>
-
-                  </div>
-                  <Typography
-                    variant="body1"
-
-                    sx={styles.winnername}
-                  >
-                    <p className="!flex !flex-col" style={{ color: 'white' }}>
-                      <span>tanve***</span>
-                      <span>fun@859***</span>
-                    </p>
-                  </Typography>
-                  <Box sx={styles.winnerbannerouter}>
-                    <Box
-                      height={45}
-                      component={"img"}
-                      src={winerbanner1}
-                      sx={styles.winnerbannerinner}
-                    ></Box>
-                  </Box>
-                  <Box>
-                    <Typography
-                      variant="body1"
-
-                      sx={styles.winneramout || 0}
-                    >
-                      Receive ₹{Number(i?.win || 0)?.toFixed(2)}
-                    </Typography>
-                    <Typography
-                      variant="body1"
-
-                      sx={styles.winnertitle}
-                    >
-                      Winning amount
-                    </Typography>
-                  </Box>
-                </Stack>
-              );
-            })}
-          </Box> */}
-          {/* {poicy && !lodingBanner && (
-            <Dialog
-              open={poicy}
-              TransitionComponent={Transition}
-              keepMounted
-              onClose={handleClosepolicy}
-              aria-describedby="alert-dialog-slide-description"
-              PaperProps={{ className: `!max - w - [500px] ${gray} ` }}
-            >
-              <div
-                style={{
-                  background: zubgtext,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "15px",
-                }}
-              >
-                {!openbannerurl ||
-                  (openbannerurl === "" && (
-                    <p style={{ color: "white", fontSize: "14px" }}>
-                      Notification
-                    </p>
-                  ))}
-                <RxCross2
-                  style={{ color: "white" }}
-                  onClick={handleClosepolicy}
-                />
-              </div>
-              <DialogContent style={{ background: zubgback }}>
-                {!openbannerurl || openbannerurl === "" ? (
-                  <Notification handleClosepolicy={handleClosepolicy} />
-                ) : (
-                  <img src={openbannerurl} className="w-[100%] h-[100%]" />
-                )}
-              </DialogContent>
-            </Dialog>
-          )} */}
-          {statusyesterday?.status_of_deposit_popup === 1 ?
-           <MyModal /> 
-          : "" }
-        
-        </Container>
+          </Container>
       </Box>
       <CustomCircularProgress isLoading={isLoading || isLoading} />
     </Layout>

@@ -37,7 +37,6 @@ import wit from "../../assets/images/witt.png";
 import wtd from "../../assets/rechargeIcon.png";
 // import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
 import toast from "react-hot-toast";
-import MyModal from "../../Shared/Modal";
 import s from "../../assets/wdhistory.png";
 import dpt from "../../assets/withdrow.png";
 import Layout from "../../component/Layout/Layout";
@@ -690,9 +689,7 @@ function Account() {
           </Dialog>
         )} */}
         <CustomCircularProgress isLoading={isLoading} />
-        {statusyesterday?.status_of_deposit_popup === 1 ?
-           <MyModal /> 
-          : "" }
+    
       </Container>
     </Layout>
   );
